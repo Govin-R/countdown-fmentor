@@ -1,0 +1,60 @@
+#countdown {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  height: max-content;
+}
+#countdown #timer {
+  border: 1px solid black;
+  font-size: 100px;
+  text-align: center;
+}
+
+#backup {
+  border: 2px solid red;
+  height: 100px;
+  padding: 1rem;
+  padding-top: 0;
+}
+#backup:hover #oneHalf {
+  transform: rotatex(90deg);
+}
+#backup:hover #secondHalf {
+  transform: rotatex(-90deg);
+}
+
+#oneHalf {
+  position: relative;
+  border: 1px solid green;
+  height: 60px;
+  overflow: hidden;
+  z-index: 2;
+  background-color: green;
+  transition: all ease-out 1s;
+  transition-delay: 0.5s;
+}
+
+#secondHalf {
+  position: relative;
+  height: 100px;
+  margin-top: -60px;
+  transition: all ease-out 1s;
+  transform-origin: center;
+  background-color: brown;
+}
+#secondHalf:hover {
+  transform: rotatex(-90deg);
+}
+
+@keyframes flip1 {
+  0% {
+    transform: rotatex(0deg);
+  }
+  50% {
+    transform: rotatex(90deg);
+  }
+  100% {
+    transform: rotatex(100deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
