@@ -15,20 +15,21 @@
 	//transition:all ease-out 0.3s;
 	& div{
 	
-		animation:flip1 1s infinite;
+	//	animation:flip1 1s infinite;
 	}
 
 }
 
 
-#spanWait{
-	animation:flip1 0.9s infinite;
+.spanWait{
+	animation:flip1 1s infinite;
 }
 
 
 @keyframes flip1 {
 	0%,80%{
 		transform:rotatex(360deg);
+
 	}
 } 
 	

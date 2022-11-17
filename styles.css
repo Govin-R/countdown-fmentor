@@ -10,12 +10,8 @@
   border: 1px solid black;
   font-size: 5rem;
 }
-#Days div, #Hours div, #Minutes div, #Seconds div {
+.spanWait {
   animation: flip1 1s infinite;
-}
-
-#spanWait {
-  animation: flip1 0.9s infinite;
 }
 
 @keyframes flip1 {
