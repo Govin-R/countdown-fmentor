@@ -23,7 +23,13 @@ let Days = document.getElementById('spanDays');
 
 //seconds.addEventListener('click',()=>{seconds.classList.add('spanWait'),console.log(this)});
 
-let TimeSecond= 100;
+//let TimeSecond= 100;
+let Times={
+	'second':00,
+	'minute':59,
+	'hour':23,
+	'days':00,
+}
 let elements =[Seconds,Minutes,Hours,Days]
 
 function corrected(tm){
@@ -35,6 +41,22 @@ function corrected(tm){
 	}
 }
 
+function timeCorretion(tm){
+	//for seconds 
+	if(tm>60){
+		Times.second%=60;
+		Times.minute+=1;
+		if(Times.minute>60){
+			Times.minute%=60;
+			Times.hour+=1;
+		}
+		if(Times.hour>24){
+			Times.hour%=24;
+			Times.days+=1;
+		}
+	}
+}
+
 function manipulate_time(){
 	//let tempLocalTime = Date().split(' ')[4].split(':');
 	//console.log(tempLocalTime);
@@ -42,10 +64,19 @@ function manipulate_time(){
 	if(Seconds.classList.contains('spanWait')==false){
 		Seconds.classList.add('spanWait');
 	}
-	Seconds.innerText=corrected(TimeSecond);
-	if(TimeSecond>1){
-	TimeSecond-=1;
+	//Seconds.innerText=corrected(TimeSecond);
+	Times.second+=1;
+	let rightTime ;
+	if(Times.second>60){
+		//let crtime = corrected(Times.second)
+		rightTime = timeCorretion(Times.second);
 	}
+	rightTime= String(corrected(Times.second));
+	Seconds.innerText=rightTime;
+	Minutes.innerText=String(corrected(Times.minute));
+	Hours.innerText=String(corrected(Times.hour));
+	Days.innerText=String(corrected(Times.days));
+
 }
 
 function run_time(){
