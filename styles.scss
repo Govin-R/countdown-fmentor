@@ -28,8 +28,7 @@
 
 @keyframes flip1 {
 	0%,80%{
-		transform:rotatex(360deg);
+		transform:rotatex(-360deg);
 
 	}
-} 
-	
+}

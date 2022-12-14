@@ -3,18 +3,6 @@ const countdown = document.getElementById('countdown');
 let intervalId;
 let value=0;
 
-function flipIt(){
-
-	intervalId = setInterval(()=>{
-		spans.forEach((a)=>{
-			document.getElementById(a).innerText=String(value);
-			document.getElementById(a).style.transform="rotatex(50deg)";		
-		})
-		value+=1;
-	},1000)
-}
-
-//flipIt();
 
 let Seconds = document.getElementById('spanSeconds');
 let Minutes = document.getElementById('spanMinutes');
@@ -30,7 +18,6 @@ let Times={
 	'hour':23,
 	'days':00,
 }
-let elements =[Seconds,Minutes,Hours,Days]
 
 function corrected(tm){
 	if(String(tm).length<2){
@@ -41,36 +28,40 @@ function corrected(tm){
 	}
 }
 
+// time change calculation
 function timeCorretion(tm){
-	//for seconds 
-	if(tm>60){
-		Times.second%=60;
-		Times.minute+=1;
-		if(Times.minute>60){
-			Times.minute%=60;
-			Times.hour+=1;
-		}
-		if(Times.hour>24){
-			Times.hour%=24;
-			Times.days+=1;
+	Times.second=60;
+	Minutes.classList.add('spanWait');
+	Times.minute-=1;
+	setTimeout(()=>{Minutes.classList.remove('spanWait')},1000);
+	if(Times.minute<0){
+		Times.minute=60;
+		Times.hour-=1;
+		if(Times.Hours<0){
+			Times.Hours=23;
+			Times.days-=1;
+			if(Times.days==0){
+				Times.days=0;
+			}
 		}
 	}
-}
 
+}
 function manipulate_time(){
-	//let tempLocalTime = Date().split(' ')[4].split(':');
-	//console.log(tempLocalTime);
+
 	////change Seconds
 	if(Seconds.classList.contains('spanWait')==false){
 		Seconds.classList.add('spanWait');
 	}
+
 	//Seconds.innerText=corrected(TimeSecond);
-	Times.second+=1;
+	Times.second-=1;
 	let rightTime ;
-	if(Times.second>60){
+	if(Times.second<0){
 		//let crtime = corrected(Times.second)
 		rightTime = timeCorretion(Times.second);
 	}
+
 	rightTime= String(corrected(Times.second));
 	Seconds.innerText=rightTime;
 	Minutes.innerText=String(corrected(Times.minute));
