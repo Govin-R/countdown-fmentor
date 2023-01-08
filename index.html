@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="stylesheet" href="./styles.css" type="text/css" media="all" >
 
-	<link rel="stylesheet" href="./styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
   
   <title>Frontend Mentor | Launch countdown timer</title>
 
@@ -17,54 +17,49 @@
   </style>
 </head>
 <body>
-	<section><h2>We're launching soon</h2></section>
-	<section>
-		<div>
-		
-<!--
-<div id="countdown">
-				
-			<div class="timer">
-				<div id="Days">
-					<div id="spanDays">00</div>
-				</div>
-			</div>
-			<div class="timer">
-				<div id="Hours">
-					<div id="spanHours">00</div>
-				</div>
-			</div>
-			<div class="timer">
-				<div id="Minutes">
-					<div id="spanMinutes" >00</div>
-				</div>
-			</div>
-			<div class="timer">
-				<div id="Seconds">
-					<div id="spanSeconds">00</div>
-				</div>
-			</div>
-</div>
 
-code will update
--->
-
-
-
-
-			<div id="spanWait">
-				A
+	<h2>We're launching soon</h2>
+	<main id="content">
+ 	 	<div id='day' class="parent-div">
+			<div>
+				<h3>01</h3>
+				<div id="sp-1"></div>
+				<div id="sp-2"></div>
 			</div>
-		Days Hours Minutes Seconds
+			Days
 		</div>
-	</section>
-	
+
+ 		<div id="hours" class="parent-div">
+			<div>
+				<h3>02</h3>
+				<span></span>
+				<span></span>
+			</div>
+			Hours
+		</div>
+
+ 		<div id="minutes" class="parent-div">
+			<div>
+				<h3>03</h3>
+				<span></span>
+				<span></span>
+			</div>
+			Minutes
+		</div>
+
+  	<div id="seconds" class="parent-div"> 
+			<div>
+				<h3>04</h3>
+				<span></span>
+				<span></span>
+			</div>
+			Seconds
+		</div>
+	</main>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
-
-	<script charset="utf-8" src="./index.js"></script>
 </body>
 </html>
